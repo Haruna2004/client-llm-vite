@@ -1,20 +1,20 @@
 import {
-  ChatWorkerClient,
   ChatModule,
   ChatOptions,
+  ChatWorkerClient,
   InitProgressReport,
 } from "@mlc-ai/web-llm";
-import React, {
-  useState,
-  useCallback,
-  createContext,
-  ReactNode,
-  useMemo,
-} from "react";
-import { chatOpts, appConfig } from "./configs";
 import { OpenAI } from "openai";
-import { formatPrompt } from "./utils";
+import React, {
+  ReactNode,
+  createContext,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
+import { appConfig, chatOpts } from "./configs";
 import { ContextType, PromptResponse } from "./types";
+import { formatPrompt } from "./utils";
 
 let chat: ChatWorkerClient | ChatModule = new ChatModule();
 
@@ -38,7 +38,7 @@ const Context = createContext<ContextType | undefined>(undefined);
  */
 const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // State definitions
-  const [system, setSystem] = useState(chatOpts.conv_config.system);
+  const [system, setSystem] = useState(chatOpts.conv_config?.system_template || '');
   const [log, setLog] = useState("");
   const [progress, setProgress] = useState("");
   const [messages, setMessages] = useState<PromptResponse[]>([]);
@@ -234,3 +234,4 @@ const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 export { Context, Provider };
+

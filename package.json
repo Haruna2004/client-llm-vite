@@ -12,13 +12,13 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@mlc-ai/web-llm": "^0.2.24",
-    "@mui/icons-material": "^5.15.11",
+    "@mlc-ai/web-llm": "^0.2.29",
+    "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.11",
     "@codemirror/lang-javascript": "^6.2.2",
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
-    "@uiw/codemirror-theme-github": "^4.21.24",
+    "@emotion/styled": "^11.11.5",
+    "@uiw/codemirror-theme-github": "^4.21.25",
     "codemirror": "^6.0.1",
     "highlight.js": "^11.9.0",
     "openai": "^4.28.4",
@@ -26,18 +26,18 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
-    "@types/node": "20.10.4",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
+    "@types/node": "20.12.2",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.23",
     "@types/react-highlight": "^0.12.8",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "@uiw/react-codemirror": "^4.21.24",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.4"
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7"
   }
 }

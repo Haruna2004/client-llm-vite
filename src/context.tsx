@@ -25,9 +25,13 @@ if (typeof window !== "undefined") {
 }
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_PUBLIC_OPEN_AI_API_KEY,
+  apiKey: "My api key",
   dangerouslyAllowBrowser: true,
 });
+// const openai = new OpenAI({
+//   apiKey: import.meta.env.VITE_PUBLIC_OPEN_AI_API_KEY,
+//   dangerouslyAllowBrowser: true,
+// });
 
 const Context = createContext<ContextType | undefined>(undefined);
 
@@ -38,7 +42,9 @@ const Context = createContext<ContextType | undefined>(undefined);
  */
 const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // State definitions
-  const [system, setSystem] = useState(chatOpts.conv_config?.system_template || '');
+  const [system, setSystem] = useState(
+    chatOpts.conv_config?.system_template || ""
+  );
   const [log, setLog] = useState("");
   const [progress, setProgress] = useState("");
   const [messages, setMessages] = useState<PromptResponse[]>([]);
@@ -77,14 +83,12 @@ const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
    */
   const reload = useCallback(async () => {
     setChatLoading(true);
-    setLog('');
+    setLog("");
     try {
       await chat.unload();
       await chat.resetChat();
       chat.setInitProgressCallback((report: InitProgressReport) => {
-        setProgress(
-          report.text
-        );
+        setProgress(report.text);
       });
       await chat.reload(
         model,
@@ -234,4 +238,3 @@ const Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 export { Context, Provider };
-
